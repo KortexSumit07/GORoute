@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoRoute - Weather</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="home.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back</span>
+    </a>
+
+    <div class="home-container">
+        <div class="nav-header">
+            <h1 style="color: var(--primary-color);">
+                <a href="home.html" style="text-decoration: none; color: inherit;">
+                    <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>
+                </a>
+                Weather Forecast
+            </h1>
+        </div>
+
+        <div class="welcome-message">
+            <h2>Check the Weather Ahead</h2>
+            <p>Stay prepared for your journey with accurate weather forecasts and detailed conditions for any destination.</p>
+        </div>
+
+        <div class="weather-container">
+            <div class="weather-search">
+                <input type="text" id="cityInput" class="search-input" placeholder="Enter city name...">
+                <button onclick="getWeather()" class="filter-button">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <div id="weatherInfo" class="weather-info">
+                <img id="weatherIcon" class="weather-icon" src="" alt="Weather icon">
+                <div class="temperature">
+                    <span id="temp"></span>°C
+                </div>
+                <div class="weather-description" id="description"></div>
+                <div id="cityName" style="font-size: 1.5em; margin-bottom: 20px;"></div>
+
+                <div class="weather-details">
+                    <div class="weather-detail">
+                        <i class="fas fa-tint"></i>
+                        <p>Humidity</p>
+                        <p id="humidity"></p>
+                    </div>
+                    <div class="weather-detail">
+                        <i class="fas fa-wind"></i>
+                        <p>Wind Speed</p>
+                        <p id="windSpeed"></p>
+                    </div>
+                </div>
+
+                <div class="forecast" id="forecast">
+                    <!-- Forecast days will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/weather.js"></script>
+</body>
+</html> 

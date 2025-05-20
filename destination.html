@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORS Route Finder</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles/destination.css">
+</head>
+<body>
+  <div id="controls">
+    <input type="text" id="start" placeholder="Start location (lat,lon)" />
+    <input type="text" id="end" placeholder="End location (lat,lon)" />
+    <button onclick="getRoute()">Find Route</button>
+  </div>
+  <div id="map"></div>
+  <div id="instructions"><h3>Route Instructions</h3><ul id="directionsList"></ul></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="scripts/destination.js"></script>
+</body>
+</html>

@@ -1,56 +1,80 @@
-# 🌍 GoRoute – The Ultimate Trip Planning Companion
+# GORoute - Efficient Route Planning System
 
-GoRoute is an all-in-one trip planning platform that offers optimized routes, real-time weather updates, and hotel recommendations using APIs like Google Maps, OpenWeather & Google Places. Built with HTML, CSS, JS, and C++, it's your ultimate travel companion.  
-✨ Designed to simplify multi-stop travel planning with a user-friendly interface, real-time insights, and scalable cloud support.
+GORoute is a sophisticated route planning system that implements Dijkstra's algorithm for finding optimal paths between locations. This project provides an efficient and reliable solution for calculating shortest routes in various applications.
 
----
+## Features
 
-## 🚀 Features
+- **Dijkstra's Algorithm Implementation**: A robust implementation of Dijkstra's algorithm for finding the shortest path between two points
+- **Graph-based Routing**: Efficient graph representation using adjacency lists
+- **Coordinate-based Routing**: Support for geographical coordinates with automatic distance calculations
+- **Flexible Graph Building**: Multiple ways to build the routing graph:
+  - Manual node and edge addition
+  - Automatic graph construction from coordinate sets
+- **Undirected Graph Support**: Handles bidirectional routes between points
+- **Distance Calculations**: Built-in Euclidean distance calculations for coordinate-based routing
 
-- 🗺 **Optimized Route Planning** – Find the fastest and most efficient paths, including multi-stop trip optimization.
-- 🌦 **Real-Time Weather Updates** – Stay informed with live weather data and alerts.
-- 🏨 **Nearby Hotel Recommendations** – Get hotel suggestions based on location, budget, and availability.
-- 📅 **Smart Itinerary Builder** – Organize your trip efficiently with integrated schedule suggestions.
-- ☁ **Cloud Integration** – Real-time storage and data updates using AWS/Google Cloud.
-- 🔗 **API-Powered** – Integrated with Google Maps, OpenWeather, and Google Places for reliable data.
+## Technical Implementation
 
----
+The core routing system is implemented in JavaScript with the following key components:
 
-## 🛠 Tech Stack
+### Graph Structure
+- Uses Map-based adjacency lists for efficient graph representation
+- Supports weighted edges for accurate distance calculations
+- Maintains undirected graph relationships
 
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** C++ (for route optimization and logic processing)  
-- **APIs:** Google Maps API, OpenWeather API, Google Places API  
-- **Cloud:** AWS or Google Cloud Platform
-- 
----
+### Dijkstra's Algorithm
+- Efficient shortest path finding
+- Handles disconnected graphs gracefully
+- Returns both the path and total distance
+- Time complexity: O((V + E) log V) where V is vertices and E is edges
 
-## 🧠 How It Works
+### Coordinate System
+- Supports 2D coordinate points
+- Automatic distance calculations between points
+- Flexible coordinate-based graph construction
 
-1. **User inputs source, destination, and optional stops.**
-2. **System fetches optimal route using Google Maps API.**
-3. **Live weather data is retrieved using OpenWeather API.**
-4. **Nearby hotels displayed using Google Places API.**
-5. **Backend processes optimization logic (via C++).**
-6. **Cloud service manages user trip data and history.**
+## Usage
 
----
+```javascript
+const router = new DijkstraRouter();
 
-## 📌 Future Improvements
+// Method 1: Manual graph building
+router.addEdge('A', 'B', 5);
+router.addEdge('B', 'C', 3);
 
-- Add public transport and car rental integrations  
-- Personal user dashboards with trip history  
-- Push notifications for weather alerts and booking updates  
+// Method 2: Coordinate-based graph building
+const coordinates = [
+    [0, 0],  // point A
+    [1, 1],  // point B
+    [2, 2]   // point C
+];
+const connections = [
+    [0, 1],  // connect A to B
+    [1, 2]   // connect B to C
+];
+router.buildGraphFromCoordinates(coordinates, connections);
 
----
+// Find shortest path
+const result = router.findShortestPath(startPoint, endPoint);
+console.log(result.path);      // Array of points in the path
+console.log(result.distance);  // Total distance of the path
+```
 
-## 📄 License
+## Installation
 
-This project is for educational purposes only. Licensing to be added if used in production.
+```bash
+npm install goroute
+```
 
----
+## Contributing
 
-## 📬 Contact
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-For any queries, email at:  
-📧 knsumitpundir2004@gmail.com
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Dijkstra's algorithm implementation based on the original paper by Edsger W. Dijkstra
+- Inspired by modern routing systems and graph theory applications 
