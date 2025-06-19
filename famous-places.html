@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Famous Places & City Guide</title>
+  <link rel="stylesheet" href="styles/famous-places.css" />
+</head>
+<body>
+  <h1>Explore Famous Places & City Highlights</h1>
+
+  <div id="search-section">
+    <input type="text" id="location-input" placeholder="Enter a city (e.g., Paris)" />
+    <button id="search-btn">Search</button>
+  </div>
+
+  <div id="tabs">
+    <button class="tab-btn active" data-tab="famous">Famous Places</button>
+    <button class="tab-btn" data-tab="spotlight">City Spotlights</button>
+    <button class="tab-btn" data-tab="hotspots">Hotspots</button>
+    <button class="tab-btn" data-tab="exploration">Places for Exploration</button>
+  </div>
+
+  <div id="content">
+    <div class="tab-content" id="famous" ></div>
+    <div class="tab-content" id="spotlight" style="display:none;"></div>
+    <div class="tab-content" id="hotspots" style="display:none;"></div>
+    <div class="tab-content" id="exploration" style="display:none;"></div>
+  </div>
+
+  <script src="scripts/services/famousPlacesService.js"></script>
+  <script src="scripts/famous-places.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoRoute - Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="scripts/navigation.js"></script>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="home.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back</span>
+    </a>
+
+    <!-- Navigation Toggle Button -->
+    <button class="nav-toggle" onclick="toggleNav()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navigation Sidebar -->
+    <div class="nav-sidebar">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <div class="nav-item">
+            <i class="fas fa-user"></i>
+            <a href="profile.html">Profile</a>
+        </div>
+        <div class="nav-divider"></div>
+        <div class="nav-item">
+            <i class="fas fa-file-contract"></i>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
+        <div class="nav-item">
+            <i class="fas fa-envelope"></i>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-divider"></div>
+        <div class="nav-item">
+            <i class="fas fa-sign-out-alt"></i>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <div class="welcome-message">
+            <h2>Welcome to Your Travel Hub!</h2>
+            <p>Customize your profile, manage your preferences, and make your travel experience uniquely yours.</p>
+        </div>
+        
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img id="profile-image" src="https://via.placeholder.com/150" alt="Profile Picture">
+                    <div class="avatar-overlay">
+                        <label for="avatar-upload" class="upload-btn">
+                            <i class="fas fa-camera"></i>
+                        </label>
+                        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <h1 id="user-name">Nikhil Singh Bisht</h1>
+                <p id="user-email">nikhilsinghbisht@gmail.com</p>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>Personal Information</h2>
+                    <form id="personal-info-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="full-name" value="Nikhil Singh Bisht">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" value="nikhilsinghbisht@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" id="phone" value="9876587684">
+                        </div>
+                        <div class="form-group">
+                            <label>Location</label>
+                            <input type="text" id="location" value="Dehradun, India">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Preferences</h2>
+                    <form id="preferences-form">
+                        <div class="form-group">
+                            <label>Language</label>
+                            <select id="language">
+                                <option value="en">English</option>
+                                <option value="hi">Hindi</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Currency</label>
+                            <select id="currency">
+                                <option value="INR">INR (₹)</option>
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Notifications</label>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="email-notifications" checked>
+                                <label for="email-notifications"></label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Account Security</h2>
+                    <form id="security-form">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" id="current-password">
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" id="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" id="confirm-password">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="save-btn" onclick="saveChanges()">Save Changes</button>
+                    <button class="delete-btn" onclick="deleteAccount()">Delete Account</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@goroute.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GoRoute. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/profile.js"></script>
+</body>
+</html> 

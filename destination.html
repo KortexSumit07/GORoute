@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Maps Route Finder</title>
+  <link rel="stylesheet" href="styles/destination.css">
+</head>
+<body>
+  <div id="controls">
+    <input type="text" id="start" placeholder="Start location" />
+    <input type="text" id="end" placeholder="End location" />
+    <button onclick="getRoute()">Find Route</button>
+  </div>
+  <div id="map"></div>
+  <div id="instructions">
+    <h3>Route Instructions</h3>
+    <div id="directionsPanel"></div>
+  </div>
+
+  <script src="scripts/destination.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUc2f29h_gg7B53mOoAKvV3ABE0pTdAio&libraries=geometry&callback=initMap">
+  </script>
+</body>
+</html>

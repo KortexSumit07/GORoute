@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripWise - Hotels</title>
+    <link rel="stylesheet" href="styles/hotels.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="welcome-message">
+                <h1>Discover Your Perfect Stay</h1>
+                <p>Find comfortable accommodations for your journey</p>
+            </div>
+            <div class="search-box main-search">
+                <i class="fas fa-hotel"></i>
+                <input type="text" id="hotelSearch" placeholder="Search for hotels, resorts, or accommodations...">
+                <button id="searchBtn" class="search-button">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="home.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back</span>
+    </a>
+
+    <div class="main-container">
+        <div class="filters-section">
+            <div class="option-card location-card">
+                <div class="card-header">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                </div>
+                <div class="card-content">
+                    <button id="useLocation" class="location-btn">
+                        <i class="fas fa-location-dot"></i>
+                        Use My Location
+                    </button>
+                    <div class="divider">or</div>
+                    <div class="input-group">
+                        <i class="fas fa-city"></i>
+                        <input type="text" id="locationInput" placeholder="Enter city or location">
+                    </div>
+                </div>
+            </div>
+
+            <div class="option-card filters-card">
+                <div class="card-header">
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>Filters</h3>
+                </div>
+                <div class="card-content">
+                    <div class="filter-group">
+                        <label>
+                            <i class="fas fa-road"></i>
+                            Distance
+                        </label>
+                        <div class="range-slider">
+                            <input type="range" id="radiusInput" min="1" max="50" value="5">
+                            <span id="radiusValue">5 km</span>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>
+                            <i class="fas fa-tag"></i>
+                            Price Range
+                        </label>
+                        <select id="priceFilter">
+                            <option value="">Any Price</option>
+                            <option value="1">Budget ($)</option>
+                            <option value="2">Moderate ($$)</option>
+                            <option value="3">Luxury ($$$)</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>
+                            <i class="fas fa-star"></i>
+                            Rating
+                        </label>
+                        <select id="ratingFilter">
+                            <option value="">Any Rating</option>
+                            <option value="4">4+ Stars</option>
+                            <option value="3">3+ Stars</option>
+                            <option value="2">2+ Stars</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div class="results-header">
+                <div id="resultsInfo" class="results-count"></div>
+                <div class="view-toggle">
+                    <button class="active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="hotelsList" class="hotels-grid"></div>
+
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-bed"></i>
+                <h3>No Hotels Found</h3>
+                <p>Try adjusting your search criteria or location</p>
+                <button class="reset-search">Reset Search</button>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Searching for the perfect hotels...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotel Details Modal -->
+    <div id="hotelModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="hotelDetails"></div>
+        </div>
+    </div>
+
+    <script src="scripts/services/hotelService.js"></script>
+    <script src="scripts/hotels.js"></script>
+</body>
+</html> 

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TripWise - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/navigation.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="famous-places.css">
+    <script src="scripts/navigation.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Toggle Button -->
+    <button class="nav-toggle" onclick="toggleNav()">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navigation Sidebar -->
+    <div class="nav-sidebar">
+      <span class="close-btn" onclick="closeNav()">&times;</span>
+      <div class="nav-item">
+        <i class="fas fa-user"></i>
+        <a href="profile.html">Profile</a>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="nav-item">
+        <i class="fas fa-file-contract"></i>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+      <div class="nav-item">
+        <i class="fas fa-envelope"></i>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="nav-item">
+        <i class="fas fa-sign-out-alt"></i>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+      <div class="home-container">
+        <div class="nav-header">
+          <h1>Welcome to GoRoute</h1>
+          <p>Your Ultimate Trip Planning Companion</p>
+        </div>
+
+        <div class="welcome-message">
+          <h2>Start Your Journey</h2>
+          <p>
+            Plan your perfect trip with our comprehensive travel tools and
+            services.
+          </p>
+        </div>
+
+        <div class="options-grid">
+          <!-- Destination Option -->
+          <div
+            class="option-button"
+            onclick="window.location.href='destination.html'"
+          >
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Destinations</h3>
+            <p>
+              Find the shortest route to your destination with interactive maps
+            </p>
+          </div>
+
+          <!-- Hotels Option -->
+          <div
+            class="option-button"
+            onclick="window.location.href='hotels.html'"
+          >
+            <i class="fas fa-hotel"></i>
+            <h3>Hotels</h3>
+            <p>Search and filter hotels by rating and location</p>
+          </div>
+
+          <!-- Famous Places Option -->
+          <div
+            class="option-button"
+            onclick="window.location.href='famous-places.html'"
+          >
+            <i class="fas fa-landmark"></i>
+            <h3>Famous Places</h3>
+            <p>Discover popular attractions near your destination</p>
+          </div>
+
+          <!-- Weather Option -->
+          <div
+            class="option-button"
+            onclick="window.location.href='weather.html'"
+          >
+            <i class="fas fa-cloud-sun"></i>
+            <h3>Weather</h3>
+            <p>Check weather conditions for your destination</p>
+          </div>
+
+          <!-- Profile Option -->
+          <div
+            class="option-button"
+            onclick="window.location.href='profile.html'"
+          >
+            <i class="fas fa-user"></i>
+            <h3>Profile</h3>
+            <p>Manage your account and preferences</p>
+          </div>
+
+          <!-- Trip History Option -->
+          <div
+            class="option-button"
+            onclick="window.location.href='trip-history.html'"
+          >
+            <i class="fas fa-history"></i>
+            <h3>Trip History</h3>
+            <p>View and manage your past trip plans</p>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h3>Contact Us</h3>
+              <p><i class="fas fa-envelope"></i> support@goroute.com</p>
+              <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="footer-section">
+              <h3>Quick Links</h3>
+              <a href="terms.html">Terms & Conditions</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2024 GoRoute. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="famousPlacesService.js"></script>
+    <script src="famous-places.js"></script>
+  </body>
+</html>
